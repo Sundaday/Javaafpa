@@ -1,11 +1,11 @@
-package com.sundaday.jeu;
+package com.sundaday.types;
 
 public class User {
     private String userFirstname;
     private String userName;
-    private String status;
+    private CategorieUser status;
 
-    public User(String userFirstname, String userName, String status) {
+    public User(String userFirstname, String userName, CategorieUser status) {
         this.userFirstname = userFirstname;
         this.userName = userName;
         this.status = status;
@@ -13,11 +13,11 @@ public class User {
 
     @Override
     public String toString() {
-        return "User{" +
-                "userFirstname='" + userFirstname + '\'' +
-                ", userName='" + userName + '\'' +
-                ", status='" + status + '\'' +
-                '}';
+        return "User" +
+                "userFirstname='" + userFirstname + '\n' +
+                "userName='" + userName + '\n' +
+                "status='" + status + '\n'
+                ;
     }
 
     public String getUserFirstname() {
@@ -36,11 +36,11 @@ public class User {
         this.userName = userName;
     }
 
-    public String getStatus() {
+    public CategorieUser getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(CategorieUser status) {
         this.status = status;
     }
 }

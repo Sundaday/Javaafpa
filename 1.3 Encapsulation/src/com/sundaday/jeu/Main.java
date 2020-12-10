@@ -20,8 +20,7 @@ public class Main extends Outil{
 
         //JOptionPane.showMessageDialog(null,Nathalie.toStringPersonne()+"\n"+Bernard.toStringPersonne());
         Afficher(Jean);
-        Afficher(Bernard);
-        Afficher(Nathalie);
+
 
     }
 }
