@@ -3,7 +3,7 @@ package com.sundaday.jeu;
 
 import javax.swing.*;
 
-public class Main extends Outil{
+public class Main {//extends Outil{
 
     public static void main(String[] args) throws ClassNotFoundException, UnsupportedLookAndFeelException, InstantiationException, IllegalAccessException {
         Adresse paris = new Adresse(2,"rue Victor Hugo",75008,"Paris");
@@ -15,12 +15,12 @@ public class Main extends Outil{
         Personne Nathalie = new Personne("Nathalie","Durand",35,nantes);
 
 
-        //Jean.setAdresse(new Adresse(44,"rue des Docks",33000,"Bordeaux"));
-        //Nathalie.setAdresse(Bernard.getAdresse());
+        Jean.setAdresse(new Adresse(44,"rue des Docks",33000,"Bordeaux"));
+        Nathalie.setAdresse(Bernard.getAdresse());
 
-        //JOptionPane.showMessageDialog(null,Nathalie.toStringPersonne()+"\n"+Bernard.toStringPersonne());
+        JOptionPane.showMessageDialog(null,Nathalie.toString() + "\n" + Bernard.toString());
+        ;
         Afficher(Jean);
-
 
     }
 }

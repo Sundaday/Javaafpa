@@ -11,6 +11,6 @@ public class Main {
         User jim = new User("Jim","Machin",CategorieUser.STAND);
 
         Message message1 = new Message("JAVA SE","L'encapsulation est une propriété fondamentale",john);
-        JOptionPane.showMessageDialog(null,message1 + jean.toString());
+        JOptionPane.showMessageDialog(null,"BBRBRBRBRBRBRBRBRBRBR");
     }
 }

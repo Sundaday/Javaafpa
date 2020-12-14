@@ -19,7 +19,6 @@ public class Adresse {
 
     //methodes
 
-
     public String toString(){
         return numeroRue + " " + nomRue + " " + codePostal + " " + ville;
     }
