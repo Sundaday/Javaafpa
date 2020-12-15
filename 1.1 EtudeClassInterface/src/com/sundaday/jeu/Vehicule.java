@@ -1,23 +1,26 @@
 package com.sundaday.jeu;
 
+
+
 public abstract class Vehicule {
     //variable
     String marque;
     String modele;
-    float reservoir;
+
 
     //constructeur
-    public Vehicule(String marque, String modele, float reservoir) {
+    public Vehicule(String marque, String modele, float volumeReservoir){
         this.marque = marque;
         this.modele = modele;
-        this.reservoir = reservoir;
+        Moteur.volumeReservoir = volumeReservoir;
+
     }
 
     //methode
     public abstract boolean demarrer();
     public abstract void arreter();
-    public abstract void faireLePlein(float essenceAjoute);
-
+    public static void faireLePlein(float essenceAjoute) {
+    }
 
 
 }

@@ -2,8 +2,8 @@ package com.sundaday.jeu;
 
 public class Scooter extends VehiculeAMoteur {
 
-    public Scooter(String marque, String modele, float reservoir) {
-        super(marque, modele, reservoir);
+    public Scooter(String marque, String modele, float volumeReservoir) {
+        super(marque, modele, volumeReservoir);
     }
 
     public void rouler(float consommation) {
@@ -18,7 +18,6 @@ public class Scooter extends VehiculeAMoteur {
         return "Scooter{" +
                 "marque='" + marque + '\'' +
                 ", modele='" + modele + '\'' +
-                ", moteur=" + moteur +
-                '}';
+                ", moteur=";
     }
 }

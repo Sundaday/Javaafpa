@@ -1,6 +1,7 @@
 package com.sundaday.jeu;
 
 public class Moteur {
+
     //variable
     static float volumeReservoir;
     static float volumeTotal;
@@ -9,38 +10,44 @@ public class Moteur {
     //Constructeur
 
     //methode
-
-
     public static float utiliser(float carburantNecessaire) {
         if (volumeReservoir >= carburantNecessaire) {
             volumeReservoir -= carburantNecessaire;
+            System.out.println("carburantNecessaire = " + carburantNecessaire);
         } else {
             volumeReservoir = 0;
+            System.out.println("carburantNecessaire = " + carburantNecessaire);
         }
         return volumeReservoir;
     }
 
     public static boolean demarrer() {
         if (volumeReservoir > 0) {
-            volumeReservoir -= 1 / 10f;
+            volumeReservoir -= 0.1f;
         } else {
             démarré = false;
         }
         return démarré;
     }
 
-    public void arreter() {
+    public static void arreter() {
     }
 
-    public void faireLePlein(float essenceAjoute) {
+
+    public static float faireLePlein(float essenceAjoute) {
         volumeReservoir += essenceAjoute;
         volumeTotal += essenceAjoute;
         System.out.println("Plein effectué avec " + volumeReservoir + " litres");
+        return volumeReservoir;
     }
 
 
-    public float getVolumeReservoir() {
+    public static float getVolumeReservoir() {
         return volumeReservoir;
+    }
+
+    public static void setVolumeReservoir(float volumeReservoir) {
+        Moteur.volumeReservoir = volumeReservoir;
     }
 
     public float getVolumeTotal() {

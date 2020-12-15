@@ -1,26 +1,26 @@
 package com.sundaday.jeu;
 
+import static com.sundaday.jeu.Moteur.volumeReservoir;
 import static com.sundaday.jeu.Moteur.volumeTotal;
 
 public abstract class VehiculeAMoteur extends Vehicule {
-    Moteur moteur;
 
-    public VehiculeAMoteur(String marque, String modele, float reservoir) {
-        super(marque, modele, reservoir);
+    public VehiculeAMoteur(String marque, String modele, float volumeReservoir) {
+        super(marque, modele, volumeReservoir);
     }
 
-
     public boolean demarrer() {
-        return moteur.demarrer();
+        return Moteur.demarrer();
     }
 
     public void arreter() {
-        moteur.arreter();
+        Moteur.arreter();
     }
 
-    public void faireLePlein(float essenceAjoute) {
-        moteur.arreter();
-        moteur.faireLePlein(volumeTotal);
-        moteur.demarrer();
+    public static void faireLePlein(float essenceAjoute) {
+        Moteur.arreter();
+        Moteur.faireLePlein(essenceAjoute);
+        Moteur.demarrer();
     }
+
 }
