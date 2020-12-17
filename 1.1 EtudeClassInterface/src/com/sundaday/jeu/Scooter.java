@@ -2,8 +2,8 @@ package com.sundaday.jeu;
 
 public class Scooter extends VehiculeAMoteur {
 
-    public Scooter(String marque, String modele, float volumeReservoir) {
-        super(marque, modele, volumeReservoir);
+    public Scooter(String marque, String modele,String type, float volumeReservoir) {
+        super(marque, modele,type, volumeReservoir);
     }
 
     public void rouler(float consommation) {

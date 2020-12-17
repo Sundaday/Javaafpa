@@ -5,8 +5,8 @@ import static com.sundaday.jeu.Moteur.volumeTotal;
 
 public abstract class VehiculeAMoteur extends Vehicule {
 
-    public VehiculeAMoteur(String marque, String modele, float volumeReservoir) {
-        super(marque, modele, volumeReservoir);
+    public VehiculeAMoteur(String marque, String modele,String type, float volumeReservoir) {
+        super(marque, modele,type, volumeReservoir);
     }
 
     public boolean demarrer() {

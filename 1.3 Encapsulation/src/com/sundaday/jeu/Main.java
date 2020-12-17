@@ -3,7 +3,7 @@ package com.sundaday.jeu;
 
 import javax.swing.*;
 
-public class Main {//extends Outil{
+public class Main extends Outil{
 
     public static void main(String[] args) throws ClassNotFoundException, UnsupportedLookAndFeelException, InstantiationException, IllegalAccessException {
         Adresse paris = new Adresse(2,"rue Victor Hugo",75008,"Paris");
