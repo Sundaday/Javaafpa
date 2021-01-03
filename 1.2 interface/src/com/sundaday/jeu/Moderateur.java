@@ -11,5 +11,5 @@ public class Moderateur {
         this.age = age;
     }
 
-    private String age;
+    public String age;
 }
