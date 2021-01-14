@@ -1,45 +1,51 @@
 package Entities;
 
-public abstract class Societe {
+import Utils.DomaineSociete;
 
+public abstract class Societe {
+    //No static fields
+    private int id;
     private String raisonSociale;
-    private String domaineSociete;
+    private DomaineSociete domaineSociete;
     private String adresse;
     private String nomDeRue;
     private String ville;
     private String email;
     private String commentaires;
     private int telephone;
-    private int id;
     private int nbRue;
     private int codePostal;
 
-    public Societe(String raisonSociale,
-                   String domaineSociete,
+    //Default constructor
+    public Societe(){};
+
+    //Non default constructor
+    public Societe(int id,
+                   String raisonSociale,
+                   DomaineSociete domaineSociete,
                    String adresse,
                    String nomDeRue,
                    String ville,
                    String email,
                    String commentaires,
                    int telephone,
-                   int id,
                    int nbRue,
-                   int codePostal)
-    {
+                   int codePostal) {
+        this.id = id;
         this.raisonSociale = raisonSociale;
-        this.domaineSociete = domaineSociete;
+        this.domaineSociete = DomaineSociete.PUBLIC;
         this.adresse = adresse;
         this.nomDeRue = nomDeRue;
         this.ville = ville;
         this.email = email;
         this.commentaires = commentaires;
         this.telephone = telephone;
-        this.id = id;
         this.nbRue = nbRue;
         this.codePostal = codePostal;
 
     }
 
+    //G&S
     public String getRaisonSociale() {
         return raisonSociale;
     }
@@ -48,11 +54,11 @@ public abstract class Societe {
         this.raisonSociale = raisonSociale;
     }
 
-    public String getDomaineSociete() {
+    public DomaineSociete getDomaineSociete() {
         return domaineSociete;
     }
 
-    public void setDomaineSociete(String domaineSociete) {
+    public void setDomaineSociete(DomaineSociete domaineSociete) {
         this.domaineSociete = domaineSociete;
     }
 
