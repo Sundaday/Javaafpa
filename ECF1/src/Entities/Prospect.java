@@ -12,8 +12,7 @@ public class Prospect extends Societe {
     //Default constructor
     public Prospect(){};
     //Societe's constructor
-    public Prospect(int id,
-                    String raisonSociale,
+    public Prospect(String raisonSociale,
                     DomaineSociete domaineSociete,
                     String adresse,
                     String nomDeRue,
@@ -24,9 +23,8 @@ public class Prospect extends Societe {
                     int nbRue,
                     int codePostal,
                     Date dateDeProspection,
-                    String prospectInteresse) {
-        super(id,
-                raisonSociale,
+                    String prospectInteresse){
+        super(raisonSociale,
                 domaineSociete,
                 adresse,
                 nomDeRue,
@@ -55,5 +53,14 @@ public class Prospect extends Societe {
 
     public void setProspectInteresse(String prospectInteresse) {
         this.prospectInteresse = prospectInteresse;
+    }
+
+    //ToString
+    @Override
+    public String toString() {
+        return "Prospect{" +
+                "dateDeProspection=" + dateDeProspection +
+                ", prospectInteresse='" + prospectInteresse + '\'' +
+                '}';
     }
 }

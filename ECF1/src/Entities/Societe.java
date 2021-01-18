@@ -20,8 +20,7 @@ public abstract class Societe {
     public Societe(){};
 
     //Non default constructor
-    public Societe(int id,
-                   String raisonSociale,
+    public Societe(String raisonSociale,
                    DomaineSociete domaineSociete,
                    String adresse,
                    String nomDeRue,
@@ -31,7 +30,6 @@ public abstract class Societe {
                    int telephone,
                    int nbRue,
                    int codePostal) {
-        this.id = id;
         this.raisonSociale = raisonSociale;
         this.domaineSociete = DomaineSociete.PUBLIC;
         this.adresse = adresse;
@@ -110,14 +108,6 @@ public abstract class Societe {
         this.telephone = telephone;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public int getNbRue() {
         return nbRue;
     }
@@ -132,5 +122,23 @@ public abstract class Societe {
 
     public void setCodePostal(int codePostal) {
         this.codePostal = codePostal;
+    }
+
+    //ToString
+    @Override
+    public String toString() {
+        return "Societe{" +
+                "id=" + id +
+                ", raisonSociale='" + raisonSociale + '\'' +
+                ", domaineSociete=" + domaineSociete +
+                ", adresse='" + adresse + '\'' +
+                ", nomDeRue='" + nomDeRue + '\'' +
+                ", ville='" + ville + '\'' +
+                ", email='" + email + '\'' +
+                ", commentaires='" + commentaires + '\'' +
+                ", telephone=" + telephone +
+                ", nbRue=" + nbRue +
+                ", codePostal=" + codePostal +
+                '}';
     }
 }

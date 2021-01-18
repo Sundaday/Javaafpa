@@ -1,6 +1,7 @@
 package Swing;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class Main {
 
@@ -10,7 +11,12 @@ public class Main {
                 UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
             }
             catch(Exception e) { }
-            new Application();
+            EventQueue.invokeLater(new Runnable() {
+                @Override
+                public void run() {
+                    new Application();
+                }
+            });
         }
     }
 }
