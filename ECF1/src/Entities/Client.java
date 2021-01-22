@@ -1,6 +1,5 @@
 package Entities;
 
-import Utils.DomaineSociete;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +17,7 @@ public class Client extends Societe {
 
     //Non default constructor
     public Client(String raisonSociale,
-                  DomaineSociete domaineSociete,
+                  String domaineSociete,
                   String adresse,
                   String nomDeRue,
                   String ville,

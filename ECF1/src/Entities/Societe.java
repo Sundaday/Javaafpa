@@ -1,12 +1,13 @@
 package Entities;
 
-import Utils.DomaineSociete;
+
 
 public abstract class Societe {
+
     //No static fields
     private int id;
     private String raisonSociale;
-    private DomaineSociete domaineSociete;
+    private String domaineSociete;
     private String adresse;
     private String nomDeRue;
     private String ville;
@@ -21,7 +22,7 @@ public abstract class Societe {
 
     //Non default constructor
     public Societe(String raisonSociale,
-                   DomaineSociete domaineSociete,
+                   String domaineSociete,
                    String adresse,
                    String nomDeRue,
                    String ville,
@@ -31,7 +32,7 @@ public abstract class Societe {
                    int nbRue,
                    int codePostal) {
         this.raisonSociale = raisonSociale;
-        this.domaineSociete = DomaineSociete.PUBLIC;
+        this.domaineSociete = domaineSociete;
         this.adresse = adresse;
         this.nomDeRue = nomDeRue;
         this.ville = ville;
@@ -44,6 +45,14 @@ public abstract class Societe {
     }
 
     //G&S
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public String getRaisonSociale() {
         return raisonSociale;
     }
@@ -52,11 +61,11 @@ public abstract class Societe {
         this.raisonSociale = raisonSociale;
     }
 
-    public DomaineSociete getDomaineSociete() {
+    public String getDomaineSociete() {
         return domaineSociete;
     }
 
-    public void setDomaineSociete(DomaineSociete domaineSociete) {
+    public void setDomaineSociete(String domaineSociete) {
         this.domaineSociete = domaineSociete;
     }
 

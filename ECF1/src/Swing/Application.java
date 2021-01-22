@@ -6,79 +6,88 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Application extends JFrame implements ActionListener {
-    //Static fields
     //No static fields
     public String choix = "Client";
-    private JPanel main = (JPanel) this.getContentPane();
-    private JRadioButton btnClient = new JRadioButton("Client");
-    private JRadioButton btnProspect = new JRadioButton("Prospect");
-    private ButtonGroup choixEnum = new ButtonGroup();
-    private JComboBox comboBox = new JComboBox();
-    public static JButton create = new JButton("Créer");
-    public static JButton modificate = new JButton("Modifier");
-    public static JButton delete = new JButton("Supprimer");
-    public static JButton show = new JButton("Afficher");
-    private JPanel haut = new JPanel(new FlowLayout());
-    private JPanel midD = new JPanel(new GridLayout(2,2));
-    private JPanel midG = new JPanel(new BorderLayout(5,5));
-    private JPanel centre = new JPanel(new GridLayout(2,2));
-    private JPanel bas = new JPanel(new GridLayout(2,1));
 
+    private final JRadioButton btnClient = new JRadioButton("Client");
+    private final JRadioButton btnProspect = new JRadioButton("Prospect");
+    private final ButtonGroup choixEnum = new ButtonGroup();
+    private final JComboBox comboBox = new JComboBox();
+    private final JButton create = new JButton("Créer");
+    private final JButton modificate = new JButton("Modifier");
+    private final JButton delete = new JButton("Supprimer");
+    private final JButton show = new JButton("Afficher");
 
     //MainApplication
     public Application(){
 
         this.setTitle("Reverso");
-        this.getContentPane().setLayout(new FlowLayout());
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setSize(250,300);
+        this.setSize(600,500);
         this.setLocationRelativeTo(null);
-        this.setResizable(false);
+        this.setResizable(true);
         this.setAlwaysOnTop(true);
 
         this.initControls();
-        this.layoutComponents();
 
-        this.pack();
+        //this.pack();
         this.setVisible(true);
     }
 
+
     //Controles
     private void initControls(){
-        this.btnClient.setSelected(true);
-        this.btnClient.addActionListener(this);
-        this.btnProspect.addActionListener(this);
+        btnClient.setSelected(true);
+        btnClient.addActionListener(this);
+        btnProspect.addActionListener(this);
 
-    }
+        JPanel main = (JPanel) this.getContentPane();
+        main.setLayout(new BorderLayout(10,10));
+        main.setBorder(BorderFactory.createEmptyBorder(5,5,5,5));
 
-    //Layout
-    private void layoutComponents(){
-        this.main.setLayout(new BorderLayout(10,10));
-        this.main.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
-        this.bas.setBorder(BorderFactory.createTitledBorder("Raison Social"));
-        this.haut.setBorder(BorderFactory.createTitledBorder("Choix"));
-        this.centre.setBorder(BorderFactory.createTitledBorder(this.choix));
-        this.centre.add(create);
-        this.centre.add(modificate);
-        this.centre.add(delete);
-        this.centre.add(show);
-        this.haut.add(this.btnClient);
-        this.haut.add(this.btnProspect);
-        this.bas.add(this.comboBox);
-        this.choixEnum.add(this.btnClient);
-        this.choixEnum.add(this.btnProspect);
-        this.main.add(this.haut,BorderLayout.NORTH);
-        this.main.add(this.bas, BorderLayout.SOUTH);
-        this.main.add(this.midD, BorderLayout.EAST);
-        this.main.add(this.midG, BorderLayout.WEST);
-        this.main.add(this.centre, BorderLayout.CENTER);
+        JPanel toolRS = new JPanel(new BorderLayout());
+        toolRS.setBorder(BorderFactory.createTitledBorder("Raison Social"));
+        toolRS.add(comboBox);
 
+        JPanel enumChoix = new JPanel(new FlowLayout());
+        enumChoix.setBorder(BorderFactory.createTitledBorder(this.choix));
+        choixEnum.add(btnClient);
+        choixEnum.add(btnProspect);
+        enumChoix.add(btnClient, BorderLayout.NORTH);
+        enumChoix.add(btnProspect, BorderLayout.NORTH);
+
+        JPanel bouton = new JPanel(new GridLayout(4,1));
+        bouton.setBorder(BorderFactory.createTitledBorder("Option"));
+        create.addActionListener(this);
+        bouton.add(create);
+        bouton.add(modificate);
+        bouton.add(delete);
+        bouton.add(show);
+
+        main.add(enumChoix,BorderLayout.NORTH);
+        main.add(bouton, BorderLayout.CENTER);
+        main.add(toolRS,BorderLayout.SOUTH);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        if(e.getSource()==create){
+            Creer creer = new Creer();
+            this.dispose();
+        }
+        if(e.getSource()==modificate){
+            Creer creer = new Creer();
+            this.dispose();
+        }
+        if(e.getSource()==delete){
+
+            this.dispose();
+        }
+        if(e.getSource()==show){
+
+            this.dispose();
+        }
     }
 
-    private void createSecondePage(ActionEvent e) {
-    }
+
 }

@@ -1,6 +1,6 @@
 package Entities;
 
-import Utils.DomaineSociete;
+
 
 import java.util.Date;
 
@@ -13,7 +13,7 @@ public class Prospect extends Societe {
     public Prospect(){};
     //Societe's constructor
     public Prospect(String raisonSociale,
-                    DomaineSociete domaineSociete,
+                    String domaineSociete,
                     String adresse,
                     String nomDeRue,
                     String ville,
