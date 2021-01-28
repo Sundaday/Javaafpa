@@ -44,6 +44,7 @@ public class Creer extends JFrame implements ActionListener {
     private JButton annuler = new JButton("Annuler");
     private JScrollPane scroll = new JScrollPane();
     private JComboBox PriPu = new JComboBox();
+    private String regex = "^[a-zA-Z0-9_!#$%&’*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+$";
 
     //Constructor
     public Creer() {
